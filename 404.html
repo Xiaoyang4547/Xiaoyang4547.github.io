@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - 页面未找到</title>
+    <style>
+        /* 继承原有样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            background: #87CEEB;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 60px 100px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            position: relative;
+            min-width: 600px;
+            text-align: center;
+        }
+
+        h1 {
+            color: white;
+            font-family: 'Arial', sans-serif;
+            font-size: 4em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            margin: 0 0 20px;
+            line-height: 1.2;
+        }
+
+        p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.2em;
+            margin: 0 0 30px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-button {
+            display: inline-block;
+            padding: 12px 30px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 25px;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(5px);
+        }
+
+        .nav-button:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* 继承气泡动画 */
+        .bg-bubble {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: float 20s infinite linear;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0deg); }
+            100% { transform: translateY(-100vh) rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <!-- 背景气泡 -->
+    <div class="bg-bubble" style="width: 120px; height: 120px; left: 15%; top: 10%"></div>
+    <div class="bg-bubble" style="width: 80px; height: 80px; left: 65%; top: 30%"></div>
+    <div class="bg-bubble" style="width: 150px; height: 150px; left: 45%; top: 60%"></div>
+
+    <div class="glass">
+        <h1>404</h1>
+        <p>哎呀，你要找的页面飘走啦～</p>
+        <div class="button-group">
+            <a href="/" class="nav-button">返回首页</a>
+            <a href="https://github.com/Xiaoyang4547" 
+               class="nav-button"
+               target="_blank"
+               style="margin-left: 15px">
+                GitHub主页
+            </a>
+        </div>
+    </div>
+</body>
+</html>
