@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Xiaoyang4547的个人网页</title>
+    <title>Xiaoayng4547的个人网页</title>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/github-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>
     <style>
         * {
             margin: 0;
@@ -13,24 +16,47 @@
 
         body {
             min-height: 100vh;
-            background: #87CEEB;
+            background: #87CEEB; /* 天蓝色背景 */
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
             position: relative;
-            overflow: hidden;
+            overflow-x: hidden;
+            padding: 40px 20px;
         }
 
-        .glass {
+        /* 动态背景气泡 */
+        .bg-bubble {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: float 20s infinite linear;
+            z-index: 0;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0deg); }
+            100% { transform: translateY(-100vh) rotate(360deg); }
+        }
+
+        .main-container {
+            max-width: 800px;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* 标题容器 */
+        .title-glass {
             background: rgba(255, 255, 255, 0.2);
             backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
             border-radius: 15px;
-            padding: 50px 80px 60px; /* 增加底部内边距 */
-            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+            padding: 40px 60px 50px;
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
             border: 1px solid rgba(255, 255, 255, 0.18);
+            margin: 0 auto;
             position: relative;
-            min-width: 600px;
+            width: fit-content;
         }
 
         h1 {
@@ -41,17 +67,20 @@
             white-space: nowrap;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
             margin: 0;
+            line-height: 1;
+            display: block;
             position: relative;
-            padding-bottom: 10px; /* 为图标留出空间 */
+            left: 50%;
+            transform: translateX(-50%);
         }
 
-        /* 优化图标定位 */
+        /* GitHub图标 */
         .github-link {
-            position: absolute;
-            left: 30px;
-            bottom: 20px; /* 固定在容器底部 */
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
+    		position: absolute;
+    		left: 20px;    /* 原30px → 增加10px */
+    		bottom: 10px;  /* 原20px → 增加10px */
+    		transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
 
         .github-icon {
             width: 36px;
@@ -65,27 +94,35 @@
             filter: brightness(1.2);
         }
 
-        .bg-bubble {
-            position: absolute;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            animation: float 20s infinite linear;
+        /* 文章区块 */
+        .article-container {
+            margin-top: 5mm;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(8px);
+            border-radius: 15px;
+            padding: 40px;
+            width: calc(100% - 80px);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        @keyframes float {
-            0% { transform: translateY(0) rotate(0deg); }
-            100% { transform: translateY(-100vh) rotate(360deg); }
+        .markdown-content {
+            color: rgba(255, 255, 255, 0.85);
+            font-family: 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
         }
     </style>
 </head>
 <body>
+    <!-- 背景气泡 -->
     <div class="bg-bubble" style="width: 150px; height: 150px; left: 10%; top: 20%"></div>
     <div class="bg-bubble" style="width: 100px; height: 100px; left: 30%; top: 50%"></div>
     <div class="bg-bubble" style="width: 120px; height: 120px; left: 70%; top: 30%"></div>
 
-    <div class="glass-container">
-        <div class="glass">
-            <h1>Xiaoyang4547的个人网页</h1>
+    <div class="main-container">
+        <div class="title-glass">
+            <h1>Xiaoayng4547的个人网页</h1>
             <a href="https://github.com/Xiaoyang4547" 
                class="github-link" 
                target="_blank"
@@ -96,6 +133,28 @@
                 </svg>
             </a>
         </div>
+
+        <div class="article-container">
+            <div class="markdown-content" id="article-content"></div>
+        </div>
     </div>
+
+    <script>
+        // Markdown加载逻辑保持不变
+        fetch('tests.md')
+            .then(response => response.text())
+            .then(md => {
+                const html = marked.parse(md);
+                document.getElementById('article-content').innerHTML = html;
+                document.querySelectorAll('pre code').forEach((block) => {
+                    hljs.highlightElement(block);
+                });
+            })
+            .catch(err => {
+                console.error('加载文章失败:', err);
+                document.getElementById('article-content').innerHTML = 
+                    '<p style="color: rgba(255,255,255,0.7)">文章加载失败，请刷新重试</p>';
+            });
+    </script>
 </body>
 </html>
