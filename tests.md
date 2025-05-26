@@ -12,5 +12,5 @@
 然后今天下午把人机认证改了一下，考虑到中国，那就跳过吧。  
 呃，没了。  
 那给大家放张丑照吧。  
-[![pVSWBQJ.jpg](https://s21.ax1x.com/2025/05/26/pVSWBQJ.jpg)](https://imgse.com/i/pVSWBQJ)
->不放正脸了，免得被某人骂死
+[![pVSWaJU.md.jpg](https://s21.ax1x.com/2025/05/26/pVSWaJU.md.jpg)](https://imgse.com/i/pVSWaJU)
+>~~只是自己想放而已，没啥的~~
