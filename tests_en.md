@@ -1,6 +1,6 @@
 # Change language  
-[中文(简体)](index.html)  
-[English](index_en.html)  
+[中文(简体)](index_cn.html)  
+[English](index.html)  
 ***
 # Quick access   
 [Bilibili personal Homepage](https://space.bilibili.com/3537110394997567?spm_id_from=333.1007.0.0)  
