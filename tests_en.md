@@ -1,4 +1,4 @@
-# Change language  
+# Change language  更改语言  
 [中文(简体)](index_cn.html)  
 [English](index.html)  
 ***
