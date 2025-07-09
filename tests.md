@@ -1,4 +1,4 @@
-# 更改语言  
+# 更改语言  Change language  
 [中文(简体)](index_cn.html)  
 [English](index.html)
 # 快捷访问    
