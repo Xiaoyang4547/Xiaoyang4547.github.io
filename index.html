@@ -3,160 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Xiaoyang4547's personal website</title>
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/github-dark.min.css">
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            min-height: 100vh;
-            background: #87CEEB; /* 天蓝色背景 */
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            position: relative;
-            overflow-x: hidden;
-            padding: 40px 20px;
-        }
-
-        /* 动态背景气泡 */
-        .bg-bubble {
-            position: absolute;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            animation: float 20s infinite linear;
-            z-index: 0;
-        }
-
-        @keyframes float {
-            0% { transform: translateY(0) rotate(0deg); }
-            100% { transform: translateY(-100vh) rotate(360deg); }
-        }
-
-        .main-container {
-            max-width: 800px;
-            width: 100%;
-            position: relative;
-            z-index: 1;
-        }
-
-        /* 标题容器 */
-        .title-glass {
-            background: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            padding: 40px 60px 50px;
-            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
-            border: 1px solid rgba(255, 255, 255, 0.18);
-            margin: 0 auto;
-            position: relative;
-            width: fit-content;
-        }
-
-        h1 {
-            color: white;
-            font-family: 'Arial', sans-serif;
-            font-size: 2.5em;
-            text-align: center;
-            white-space: nowrap;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-            margin: 0;
-            line-height: 1;
-            display: block;
-            position: relative;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        /* GitHub图标 */
-        .github-link {
-    		position: absolute;
-    		left: 20px;    /* 原30px → 增加10px */
-    		bottom: 10px;  /* 原20px → 增加10px */
-    		transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-        .github-icon {
-            width: 36px;
-            height: 36px;
-            fill: rgba(255, 255, 255, 0.9);
-            filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.15));
-        }
-
-        .github-link:hover {
-            transform: translateY(-3px) scale(1.1);
-            filter: brightness(1.2);
-        }
-
-        /* 文章区块 */
-        .article-container {
-            margin-top: 5mm;
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(8px);
-            border-radius: 15px;
-            padding: 40px;
-            width: calc(100% - 80px);
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .markdown-content {
-            color: rgba(255, 255, 255, 0.85);
-            font-family: 'Helvetica Neue', sans-serif;
-            line-height: 1.6;
-        }
-    </style>
+    <title>Xiaoyang4547的个人网站</title>
+    <link rel="stylesheet" href="css/a_color.css">
 </head>
 <body>
-    <!-- 背景气泡 -->
-    <div class="bg-bubble" style="width: 150px; height: 150px; left: 10%; top: 20%"></div>
-    <div class="bg-bubble" style="width: 100px; height: 100px; left: 30%; top: 50%"></div>
-    <div class="bg-bubble" style="width: 120px; height: 120px; left: 70%; top: 30%"></div>
-
-    <div class="main-container">
-        <div class="title-glass">
-            <h1>Xiaoyang4547's personal website</h1>
-            <a href="https://github.com/Xiaoyang4547" 
-               class="github-link" 
-               target="_blank"
-               rel="noopener noreferrer"
-               aria-label="Visit GitHub personal homepage">
-                <svg class="github-icon" viewBox="0 0 24 24">
-                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
-                </svg>
-            </a>
-        </div>
-
-        <div class="article-container">
-            <div class="markdown-content" id="article-content"></div>
-        </div>
-    </div>
-
-    <script>
-        // Markdown加载逻辑保持不变
-        fetch('tests_en.md')
-            .then(response => response.text())
-            .then(md => {
-                const html = marked.parse(md);
-                document.getElementById('article-content').innerHTML = html;
-                document.querySelectorAll('pre code').forEach((block) => {
-                    hljs.highlightElement(block);
-                });
-            })
-            .catch(err => {
-                console.error('Failed to load article:', err);
-                document.getElementById('article-content').innerHTML = 
-                    '<p style="color: rgba(255,255,255,0.7)">The article failed to load, please refresh and try again.<br>You may have encountered a problem loading Markdown, please visit<a href="https://www.crxsoso.com/webstore/detail/medapdbncneneejhbgcjceippjlfkmkg">this page</a> to try to load Markdown. If you have already installed it, click<a href="/tests.md">here</a>to access the article.<br></p>';
-            });
-    </script>
+    <nav>
+        <ul>
+            <li><a href="index.html">主页</a></li>
+            <li><a href="#">消息</a></li>
+            <li style="float:right"><a href="index_cn.html">回到正式网页</a></li>
+            <li style="float:right"><a href="about.html">关于</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h1>Xiaoyang4547的个人网站</h1>
+        <p>这是一个预览网页，正式网页请<a href="https://www.xiaoyang4547.ip-ddns.com/index_cn.html" target="_blank" rel="noopener">点击这里</a>。</p>
+        <p style="color:yellow">请注意，此网页的基础功能暂未完善，建议前去访问正式网页，谢谢！</p>
+        <img src="https://s21.ax1x.com/2025/07/13/pVlgNz8.jpg" alt="湾岸3DX+" width="960" height="540">
+    </main>
+    <footer>
+        <p>Copyright © 2025 Xiaoyang4547,All Rights Reserved.</p>
+    </footer>
 </body>
 </html>
