@@ -1,13 +1,11 @@
-# 更改语言  Change language  
-[中文(简体)](index_cn.html)  
-[English](index.html)
+
 # 快捷访问    
 [Bilibili个人主页](https://space.bilibili.com/3537110394997567?spm_id_from=333.1007.0.0)  
 [Github个人主页](github.com/Xiaoyang4547)  
 [PDF免费转换(不保证每天都能用)](http://momopdf.ltzy.top:64225)
 ***
 # 公告  
-* [置顶]网站已更新英文版。
+* [置顶]网站准备进行大更新，现已开放[预览网站](index.html)以预览更新效果。
 ***
 # 文章
 ## 雨云MC服务器开服教程  
