@@ -1,7 +1,4 @@
-on:
-  push:
-    branches:
-      - Xiaoyang4547-404
+on: [pages publish [DIRECTORY] --branch=Xiaoyang4547-404 --project-name=Xiaoyang4547]
 
 jobs:
   deploy:
