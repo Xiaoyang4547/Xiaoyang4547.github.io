@@ -1,4 +1,4 @@
-on: [pages publish [DIRECTORY] --branch=Xiaoyang4547-404 --project-name=Xiaoyang4547]
+on: ['pages publish [DIRECTORY] --branch=Xiaoyang4547-404 --project-name=Xiaoyang4547']
 
 jobs:
   deploy:
