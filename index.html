@@ -23,6 +23,20 @@
         <!--<p style="color:#F9F400;text-align:center"><strong>请注意，此网页的基础功能暂未完善，建议前去访问正式网页，谢谢！</strong></p>
         <p style="color:#F9F400;text-align:center"><strong>本网站将在8~9月份不定期进行更新，具体更新时间将在置顶公告上显示。</strong></p>-->89
         <a href="https://imgse.com/i/pV4iaJs"><img src="https://s21.ax1x.com/2025/09/19/pV4iaJs.jpg" alt="舞萌DX" border="0" /></a>
+        <div class="cf-turnstile" 
+             data-sitekey="0x4AAAAAACjxhanE6_GwW6Bm"
+         data-callback="onTurnstileSuccess">
+        </div>
+
+        // 回调函数处理 token
+        function onTurnstileSuccess(token) {
+        // 将 turnstileToken 发送到后端
+        fetch('/api/verify', {
+            method: 'POST',
+            body: JSON.stringify({ turnstileToken: token }),
+            headers: { 'Content-Type': 'application/json' }
+        });
+        }
     </main>
     <footer>
         <p>Copyright © 2025 Xiaoyang4547,All Rights Reserved.</p>
