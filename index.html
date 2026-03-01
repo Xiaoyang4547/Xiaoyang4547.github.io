@@ -25,18 +25,8 @@
         <a href="https://imgse.com/i/pV4iaJs"><img src="https://s21.ax1x.com/2025/09/19/pV4iaJs.jpg" alt="舞萌DX" border="0" /></a>
         <div class="cf-turnstile" 
              data-sitekey="0x4AAAAAACjxhanE6_GwW6Bm"
-         data-callback="onTurnstileSuccess">
+             data-callback="onTurnstileSuccess">
         </div>
-
-        // 回调函数处理 token
-        function onTurnstileSuccess(token) {
-        // 将 turnstileToken 发送到后端
-        fetch('/api/verify', {
-            method: 'POST',
-            body: JSON.stringify({ turnstileToken: token }),
-            headers: { 'Content-Type': 'application/json' }
-        });
-        }
     </main>
     <footer>
         <p>Copyright © 2025 Xiaoyang4547,All Rights Reserved.</p>
